@@ -33,7 +33,7 @@ class AttendanceManager:
 
     def process_absences(self):
         """Marque les étudiants non détectés comme absents en fin de session."""
-        absent_time = datetime.datetime.now().strftime("%Y-%m-%d 23:00:00")
+        absent_time = datetime.datetime.now().strftime("%Y-%m-%d 12:00:00")
         for name in list(self.absent_students):
             student = self.known_students[name]
             student.mark_present(absent_time)

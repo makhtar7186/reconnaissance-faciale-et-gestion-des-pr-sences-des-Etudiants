@@ -8,9 +8,7 @@ class AttendanceStatus:
     MATIN_DEBUT     = "06:30:00"
     MATIN_FIN_RETARD = "11:00:00"
     MATIN_FIN       = "12:00:00"
-    # Horaires après-midi
-    APREM_DEBUT     = "14:30:00"
-    APREM_FIN_RETARD = "15:00:00"
+  
 
     @staticmethod
     def _minutes_from_time(heure: str) -> int:
@@ -30,17 +28,17 @@ class AttendanceStatus:
             statut = "absent"
         return statut, temp_retard
 
-    @classmethod
-    def get_status_aprem(cls, heure: str) -> tuple[str, int]:
-        """Retourne (statut, tempRetard) pour le cours de l'après-midi."""
-        temp_retard = 0
-        if heure < cls.APREM_DEBUT:
-            statut = "present"
-        elif cls.APREM_DEBUT <= heure < cls.APREM_FIN_RETARD:
-            statut = "retard"
-            temp_retard = cls._minutes_from_time(heure) - 870
-        else:
-            statut = "absent"
-        return statut, temp_retard
-
+    """    @classmethod
+        def get_status_aprem(cls, heure: str) -> tuple[str, int]:
+           
+            temp_retard = 0
+            if heure < cls.APREM_DEBUT:
+                statut = "present"
+            elif cls.APREM_DEBUT <= heure < cls.APREM_FIN_RETARD:
+                statut = "retard"
+                temp_retard = cls._minutes_from_time(heure) - 870
+            else:
+                statut = "absent"
+            return statut, temp_retard
+    """
   

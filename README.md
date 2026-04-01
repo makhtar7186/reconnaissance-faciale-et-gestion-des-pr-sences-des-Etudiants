@@ -60,7 +60,7 @@ pip install opencv-python face-recognition numpy pandas openpyxl
 
 2. **Lancer le script :**
    ```bash
-   python Main_POO.py
+   python Main.py
    ```
 
 3. **Quitter** : appuyer sur `q` dans la fenêtre vidéo.

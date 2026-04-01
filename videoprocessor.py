@@ -23,8 +23,9 @@ class VideoProcessor:
         self.recognizer = recognizer
         self.attendance = attendance
         self.url = "http://192.168.1.8:4747/video"  # Adresse donnée par l'app
-        self.cap = cv2.VideoCapture(self.url)
-        #self.cap        = cv2.VideoCapture(0)
+        #self.cap = cv2.VideoCapture(self.url)
+
+        self.cap  = cv2.VideoCapture(0)
         self.running    = False
 
     # ──────────────────────────────────────────────────────────────────
